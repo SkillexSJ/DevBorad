@@ -9,28 +9,36 @@ for (let i = 0; i < buttons.length; i++) {
     alert("Board Updated Successfully");
     button.disabled = true;
 
-    let current = parseInt(currentTaskSpan.innerText);
-    if (current > 0) {
-      current--;
-      currentTaskSpan.innerText = current;
+    let remainingTasks = 0;
 
-      let total = parseInt(totalTaskSpan.innerText);
-      total++;
-      totalTaskSpan.innerText = total;
+    for (let i = 0; i < buttons.length; i++) {
+      if (!buttons[i].disabled) {
+        remainingTasks++;
+      }
+    }
 
-      let card = button.parentElement.parentElement;
-      let titleElem = card.querySelector("h3.title");
-      let taskName = titleElem.innerText;
+    currentTaskSpan.innerText = remainingTasks;
 
-      let timeString = getCurrentTime();
+    let total = parseInt(totalTaskSpan.innerText);
+    total++;
+    totalTaskSpan.innerText = total;
 
-      let htmlString = `
-              <div class="bg-slate-50 rounded-xl p-4 text-sm text-slate-600">
-                You have completed the task "${taskName}" at ${timeString}
-            </div>
-            `;
+    let card = button.parentElement.parentElement;
+    let titleElem = card.querySelector("h3.title");
+    let taskName = titleElem.innerText;
 
-      logContainer.innerHTML += htmlString;
+    let timeString = getCurrentTime();
+
+    let htmlString = `
+            <div class="bg-slate-50 rounded-xl p-4 text-sm text-slate-600">
+              You have completed the task "${taskName}" at ${timeString}
+          </div>
+          `;
+
+    logContainer.innerHTML += htmlString;
+
+    if (remainingTasks === 0) {
+      alert("All tasks finished successfully!");
     }
   });
 }
