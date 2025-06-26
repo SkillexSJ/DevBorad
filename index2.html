@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.png" type="image/png" />
+    <title>DevBoard Dashboard</title>
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#F4F7FF] p-4 sm:p-6 md:p-8 font-poppins">
+    <!-- Container -->
+    <nav
+      class="bg-white w-full rounded-xl shadow-sm p-4 flex items-center justify-between mb-8"
+    >
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <img src="assets/logo.png" alt="" />
+        </div>
+        <h1 class="text-2xl md:text-2xl font-light text-gray-700">
+          Dev<span class="font-bold text-black">Board</span>
+        </h1>
+      </div>
+
+      <div class="flex items-center space-x-2 sm:space-x-4">
+        <!-- BACK BUTTON -->
+        <button
+          id="location-to"
+          class="btn btn-primary bg-[#3752FD] text-white"
+        >
+          Back To Desk
+        </button>
+      </div>
+    </nav>
+    <!-- BLOGS SECTION -->
+    <section class="text-black">
+      <h1 class="flex items-center justify-center text-xl font-bold">Blogs</h1>
+      <div class="flex flex-col gap-4 mt-5">
+        <div class="bg-white flex flex-col justify-between p-5 gap-4">
+          <h1 class="text-lg font-bold w-full">
+            Question-1: What are the different ways to select an element in the
+            DOM?
+          </h1>
+
+          <div class="border-t border-dashed border-gray-400 w-full"></div>
+
+          <p>there are several ways to select elements from the DOM</p>
+
+          <ul class="font-semibold text-[#3752FD]">
+            <li>getElementById()</li>
+            <li>getElementsByClassName()</li>
+            <li>getElementsByTagName()</li>
+            <li>getElementsByName()</li>
+            <li>querySelector()</li>
+            <li>querySelectorAll()</li>
+          </ul>
+        </div>
+
+        <div class="bg-white flex flex-col justify-between p-5 gap-4">
+          <h1 class="text-lg font-bold w-full">
+            Question-2: What is the difference between innerHTML, innerText, and
+            textContent ??
+          </h1>
+
+          <div class="border-t border-dashed border-gray-400 w-full"></div>
+
+          <p class="font-semibold text-[#3752FD]">
+            innerHTML = used to access or change the content of HTML elements
+            <br />
+            innerText = returns or sets only the visible text
+          </p>
+        </div>
+        <div class="bg-white flex flex-col justify-between p-5 gap-4">
+          <h1 class="text-lg font-bold w-full">
+            Question-3: What is event delegation in the DOM?
+          </h1>
+
+          <div class="border-t border-dashed border-gray-400 w-full"></div>
+
+          <p class="font-semibold text-[#3752FD]">
+            Event delegation = where a single event listener is added to a
+            parent element instead of multiple child elements.
+          </p>
+        </div>
+        <div class="bg-white flex flex-col justify-between p-5 gap-4">
+          <h1 class="text-lg font-bold w-full">
+            Question-4: What is event bubbling in the DOM?
+          </h1>
+
+          <div class="border-t border-dashed border-gray-400 w-full"></div>
+
+          <p class="font-semibold text-[#3752FD]">
+            Event bubbling = where an event triggered on a child element first
+            runs its own event handler, then "bubbles up" to its parent elements
+          </p>
+        </div>
+
+        <div class="bg-white flex flex-col justify-between p-5 gap-4">
+          <h1 class="text-lg font-bold w-full">
+            Question-5: How do you create, add, and remove elements using
+            JavaScript?
+          </h1>
+
+          <div class="border-t border-dashed border-gray-400 w-full"></div>
+
+          <p class="font-semibold text-[#3752FD]">
+            We can create using = document.createElement() <br />
+            We can add using = appendChild() or append() <br />
+            We can remove using = removeChild() or element.remove()
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script/location.js"></script>
+  </body>
+</html>

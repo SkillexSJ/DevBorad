@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.png" type="image/png" />
+    <title>DevBoard - Dashboard</title>
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[#F4F7FF] font-poppins">
+    <section class="max-w-screen-2xl mx-auto p-4 sm:p-6 lg:p-8">
+      <!--  Navigation -->
+      <header>
+        <nav
+          class="bg-white w-full rounded-xl shadow-sm p-4 flex items-center justify-between mb-8"
+        >
+          <div class="flex items-center space-x-3">
+            <!-- Using an SVG for the logo for better scaling -->
+            <div class="w-10 h-10 flex items-center justify-center">
+              <img src="assets/logo.png" alt="" />
+            </div>
+            <h1 class="text-2xl md:text-2xl font-light text-gray-700">
+              Dev<span class="font-bold text-black">Board</span>
+            </h1>
+          </div>
+
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <!-- Notifications Icon -->
+            <div
+              class="bg-gray-100 hover:bg-gray-200 rounded-full flex items-center gap-4 p-4"
+            >
+              <img src="assets/checkbox.png" alt="" />
+              <span
+                id="task-barlo"
+                class="flex h-5 w-5 items-center justify-center text-2xl font-bold text-black"
+                >23</span
+              >
+            </div>
+            <!-- Colour Button -->
+            <img
+              id="color-btn"
+              class="bg-gray-100 rounded-full p-2"
+              src="assets/theme-btn.png"
+              alt=""
+            />
+          </div>
+        </nav>
+      </header>
+
+      <main class="flex flex-col lg:flex-row gap-8 bg-white p-6">
+        <!-- Main Content -->
+        <div class="lg:w-3/4 flex flex-col gap-8">
+          <!-- Status Cards -->
+          <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+              <!-- Task-->
+              <div
+                class="flex items-center space-x-4 p-10 bg-[#F4F7FF] rounded-xl"
+              >
+                <div class="bg-white rounded-full p-3 shadow-md">
+                  <img src="assets/checkbox.png" alt="" />
+                </div>
+                <div>
+                  <p class="text-lg text-gray-600">Task Assigned</p>
+                  <p id="task-komlo" class="text-2xl font-bold text-gray-800">
+                    05
+                  </p>
+                </div>
+              </div>
+
+              <!-- Discover Something -->
+              <div
+                id="to-blog"
+                class="cursor-pointer col-span-2 flex items-center justify-center space-x-4 p-4 bg-gradient-to-r from-blue-600 via-indigo-400 to-indigo-300 text-white rounded-2xl shadow-lg hover:opacity-90 transition-opacity"
+              >
+                <img src="assets/board.png" alt="" />
+                <p class="text-lg font-semibold text-center">
+                  Discover Something <br />New Today!
+                </p>
+              </div>
+
+              <!-- Date -->
+              <div
+                class="flex items-center space-x-4 p-4 bg-[#F4F7FF] rounded-xl"
+              >
+                <div class="bg-white rounded-full p-3 shadow-md">
+                  <img src="assets/calender.png" alt="" />
+                </div>
+                <div>
+                  <p id="weekday" class="text-lg text-gray-600 font-semibold">
+                    Wed
+                  </p>
+                  <p id="fullDate" class="text-lg font-bold text-gray-800">
+                    26 June 2025
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tasks Section -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <!-- Task Card 1 -->
+            <div
+              class="bg-[#F4F7FF] rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition-shadow"
+            >
+              <div>
+                <span
+                  class="text-sm font-medium text-black bg-white py-3 px-3 rounded-md"
+                  >ShopEase</span
+                >
+                <h3 class="title text-lg font-bold text-gray-800 mt-4">
+                  Fix Mobile Button Issue
+                </h3>
+                <p
+                  class="text-gray-500 bg-white p-4 rounded-md text-sm mt-2 min-h-[40px]"
+                >
+                  Debug using Chrome DevTools, check for overlapping...,
+                </p>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <p class="text-sm text-gray-500">
+                  Deadline<br /><span class="font-bold text-gray-700"
+                    >21 March 2025</span
+                  >
+                </p>
+                <button
+                  class="task-btn btn btn-sm btn-primary bg-[#3752FD] text-white"
+                >
+                  Complete
+                </button>
+              </div>
+            </div>
+            <!-- Task Card 2 -->
+            <div
+              class="bg-[#F4F7FF] rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition-shadow"
+            >
+              <div>
+                <span
+                  class="text-sm font-medium text-black bg-white py-3 px-3 rounded-md"
+                  >CloudSync</span
+                >
+                <h3 class="title text-lg font-bold text-gray-800 mt-4">
+                  Add Dark Mode
+                </h3>
+                <p
+                  class="text-gray-500 bg-white p-4 rounded-md text-sm mt-2 min-h-[40px]"
+                >
+                  Store the user's preference in localStorage, update CSS
+                  variables...
+                </p>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <p class="text-sm text-gray-500">
+                  Deadline<br /><span class="font-bold text-gray-700"
+                    >21 March 2025</span
+                  >
+                </p>
+                <button
+                  class="task-btn btn btn-sm btn-primary bg-[#3752FD] text-white"
+                >
+                  Complete
+                </button>
+              </div>
+            </div>
+            <!-- Task Card 3 -->
+            <div
+              class="bg-[#F4F7FF] rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition-shadow"
+            >
+              <div>
+                <span
+                  class="text-sm font-medium text-black bg-white py-3 px-3 rounded-md"
+                  >SwiftPay</span
+                >
+                <h3 class="title text-lg font-bold text-gray-800 mt-4">
+                  Optimize Home page
+                </h3>
+                <p
+                  class="text-gray-500 bg-white p-4 rounded-md text-sm mt-2 min-h-[40px]"
+                >
+                  Debug using Chrome DevTools, check for overlapping...
+                </p>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <p class="text-sm text-gray-500">
+                  Deadline<br /><span class="font-bold text-gray-700"
+                    >28 March 2025</span
+                  >
+                </p>
+                <button
+                  class="task-btn btn btn-sm btn-primary bg-[#3752FD] text-white"
+                >
+                  Complete
+                </button>
+              </div>
+            </div>
+            <!-- Task Card 4 -->
+            <div
+              class="bg-[#F4F7FF] rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition-shadow"
+            >
+              <div>
+                <span
+                  class="text-sm font-medium text-black bg-white py-3 px-3 rounded-md"
+                  >Meta</span
+                >
+                <h3 class="title text-lg font-bold text-gray-800 mt-4">
+                  Add new emoji 🙌
+                </h3>
+                <p
+                  class="text-gray-500 bg-white p-4 rounded-md text-sm mt-2 min-h-[40px]"
+                >
+                  Debug using Chrome DevTools, check for overlapping...
+                </p>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <p class="text-sm text-gray-500">
+                  Deadline<br /><span class="font-bold text-gray-700"
+                    >05 April 2025</span
+                  >
+                </p>
+                <button
+                  class="task-btn btn btn-sm btn-primary bg-[#3752FD] text-white"
+                >
+                  Complete
+                </button>
+              </div>
+            </div>
+            <!-- Task Card 5 -->
+            <div
+              class="bg-[#F4F7FF] rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition-shadow"
+            >
+              <div>
+                <span
+                  class="text-sm font-medium text-black bg-white py-3 px-3 rounded-md"
+                  >Google LLC</span
+                >
+                <h3 class="title text-lg font-bold text-gray-800 mt-4">
+                  Integrate Gemini API
+                </h3>
+                <p
+                  class="text-gray-500 bg-white p-4 rounded-md text-sm mt-2 min-h-[40px]"
+                >
+                  Debug using Chrome DevTools, check for overlapping...
+                </p>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <p class="text-sm text-gray-500">
+                  Deadline<br /><span class="font-bold text-gray-700"
+                    >10 April 2025</span
+                  >
+                </p>
+                <button
+                  class="task-btn btn btn-sm btn-primary bg-[#3752FD] text-white"
+                >
+                  Complete
+                </button>
+              </div>
+            </div>
+            <!-- Task Card 6 -->
+            <div
+              class="bg-[#F4F7FF] rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition-shadow"
+            >
+              <div>
+                <span
+                  class="text-sm font-medium text-black bg-white py-3 px-3 rounded-md"
+                  >Glassdoor</span
+                >
+                <h3 class="title text-lg font-bold text-gray-800 mt-4">
+                  Improve Job searching
+                </h3>
+                <p
+                  class="text-gray-500 bg-white p-4 rounded-md text-sm mt-2 min-h-[40px]"
+                >
+                  Debug using Chrome DevTools, check for overlapping...
+                </p>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <p class="text-sm text-gray-500">
+                  Deadline<br /><span class="font-bold text-gray-700"
+                    >15 April 2025</span
+                  >
+                </p>
+                <button
+                  class="task-btn btn btn-sm btn-primary bg-[#3752FD] text-white"
+                >
+                  Complete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity  -->
+        <div class="lg:w-1/4 bg-[#F4F7FF] rounded-2xl shadow-sm p-6">
+          <div class="flex items-center justify-center mb-6">
+            <div class="flex items-center space-x-2">
+              <img src="assets/activity.png" alt="" />
+              <h2 class="text-lg font-bold text-gray-800 text-center">
+                Activity Log
+              </h2>
+            </div>
+          </div>
+          <button
+            id="clearHistoryBtn"
+            class="btn btn-primary w-full mb-6 bg-[#3752FD] text-white"
+          >
+            Clear History
+          </button>
+          <div id="container" class="space-y-4"></div>
+        </div>
+      </main>
+    </section>
+
+    <script src="script/add_minus.js"></script>
+    <script src="script/click.js"></script>
+    <script src="script/current_time.js"></script>
+    <script src="script/date_generate.js"></script>
+    <script src="script/hisroty_clear.js"></script>
+    <script src="script/colour_change.js"></script>
+    <script>
+      document
+        .getElementById("to-blog")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "./index2.html";
+        });
+    </script>
+  </body>
+</html>
